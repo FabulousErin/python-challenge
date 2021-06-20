@@ -1,10 +1,38 @@
+#Modules
 import os
 import csv
+import datetime
 
-csvpath = os.path.join('budget_data.csv','election_data.csv')
-print(csvpath)
+#Set paths for files
+csv_budget = os.path.join('budget_data.csv')
+csv_election = os.path.join('election_data.csv')
 
-csvfile=open(csvpath)
+#Open the CSVs
+budget_file=open(csv_budget)
+budget_reader = csv.reader(budget_file, delimiter=',')
+list_of_budget_columns =[]
+for row in budget_reader:
+    list_of_budget_columns.append(row)
+    break
+print("The headings in budget_data.csv are : ", list_of_budget_columns[0])
+election_file=open(csv_election)
+election_reader = csv.reader(election_file, delimiter=',')
+list_of_election_columns =[]
+for row in election_reader:
+    list_of_election_columns.append(row)
+    break
+print("The headings in election_data.csv are : ", list_of_election_columns[0]),
 
-csvreader = csv.reader(csvfile, delimiter=',')
+
+#Variables for PyBank
+months_count =[],
+months_count['MonthSort']=months_count[list_of_budget_columns].apply(lambda x: x.month),
+    
+total_profit =[]
+profit_change =[]
+avg_change =[]
+profit_high=[]
+high_date = []
+loss_high = []
+loss_date = []
 
