@@ -25,10 +25,16 @@ print("The headings in election_data.csv are : ", list_of_election_columns[0]),
 
 
 #Variables for PyBank
-months_count =[],
-months_count['MonthSort']=months_count[list_of_budget_columns].apply(lambda x: x.month),
-    
-total_profit =[]
+#months_count =[],
+#months_count['MonthSort']=months_count[list_of_budget_columns].apply(lambda x: x.month),
+month_total =0 
+for month in list_of_budget_columns[0:]:
+    month_count = month[0]
+    month_total += month_count
+    break
+
+#months_count = list_of_budget_columns.count[]
+print("Total months: ", month)
 profit_change =[]
 avg_change =[]
 profit_high=[]
