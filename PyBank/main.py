@@ -25,7 +25,7 @@ with open(csv_budget) as budget_data:
     
     for row in budget_reader:
         total_months += 1
-        net += int(row[1])
+        net += int(row[0])
 
        # print('each row', row)
         avg_chg = int(row[1]) - int(old_row[1])
@@ -35,10 +35,8 @@ with open(csv_budget) as budget_data:
              
  
     changes_grand_total = sum(changes) / len(changes)
-    #message = 'Avg changes $',{changes_grand_total:.2f}
     answer = str(round(changes_grand_total, 2))
     print('Changes avg $', answer)
-
     print('Total months:', total_months)
     print('Total: $',net)
 
